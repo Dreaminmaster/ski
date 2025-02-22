@@ -1,0 +1,31 @@
+name: ski_pomodoro
+description: 滑雪番茄钟应用程序
+
+publish_to: 'none' # 防止意外发布到 pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  provider: ^6.0.5
+  shared_preferences: ^2.2.0
+  just_audio: ^0.9.34
+  cupertino_icons: ^1.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+  
+  assets:
+    - assets/audio/
+    - assets/images/
+dependencies:
+  fl_chart: ^0.63.0

@@ -70,3 +70,148 @@ ski是一款创新地将滑雪元素与番茄钟时间管理相结合的应用�
 2. 数据存储：滑雪记录和趋势分析数据需进行本地存储，并支持云端同步。
 
 3. 兼容性：确保App在不同品牌和型号的手机上正常运行，画面和功能显示正常。
+
+
+我来指导你如何运行这个 Flutter 项目：
+
+1. 首先，创建一个新的 Flutter 项目：
+```bash
+flutter create ski_pomodoro
+cd ski_pomodoro
+```
+
+2. 替换 `pubspec.yaml` 文件内容：
+```yaml
+name: ski_pomodoro
+description: 滑雪番茄钟应用程序
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  provider: ^6.0.5
+  shared_preferences: ^2.2.0
+  just_audio: ^0.9.34
+  fl_chart: ^0.63.0
+  cupertino_icons: ^1.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+  
+  assets:
+    - assets/audio/
+    - assets/images/
+```
+
+3. 创建必要的资源目录：
+```bash
+mkdir -p assets/audio assets/images
+```
+
+4. 准备必要的图片资源，放入 `assets/images/` 目录：
+- ski_map.png（滑雪场地图）
+- snowboard.png（单板图标）
+- ski.png（双板图标）
+- app_icon.png（应用图标）
+
+5. 准备音频资源，放入 `assets/audio/` 目录：
+- ski.mp3（滑雪声音）
+- jump.mp3（跳跃声音）
+- collision.mp3（碰撞声音）
+
+6. 按照之前提供的代码结构创建相应的目录和文件：
+```bash
+mkdir -p lib/constants lib/models lib/screens lib/services lib/utils lib/widgets
+```
+
+7. 将所有代码文件放入对应目录：
+```
+lib/
+├── constants/
+│   ├── app_colors.dart
+│   └── app_constants.dart
+├── models/
+│   ├── ski_record.dart
+│   └── user_settings.dart
+├── screens/
+│   ├── home_screen.dart
+│   ├── ski_settings_screen.dart
+│   ├── ski_equipment_screen.dart
+│   ├── ski_preparation_screen.dart
+│   ├── ski_simulation_screen.dart
+│   ├── ski_completion_screen.dart
+│   ├── settings_screen.dart
+│   └── analytics_screen.dart
+├── services/
+│   ├── storage_service.dart
+│   └── audio_service.dart
+├── widgets/
+│   ├── ski_map_widget.dart
+│   ├── function_button.dart
+│   └── ski_animation_widget.dart
+├── utils/
+│   └── helpers.dart
+└── main.dart
+```
+
+8. 安装依赖：
+```bash
+flutter pub get
+```
+
+9. 运行项目：
+```bash
+flutter run
+```
+
+如果你使用 VS Code 或 Android Studio：
+1. 打开项目文件夹
+2. 确保已连接模拟器或实机
+3. 按 F5（VS Code）或点击运行按钮（Android Studio）
+
+常见问题解决：
+
+1. 如果遇到资源文件找不到的错误：
+- 确保 `pubspec.yaml` 中的资源路径正确
+- 运行 `flutter clean` 然后 `flutter pub get`
+
+2. 如果遇到依赖版本冲突：
+- 尝试运行 `flutter pub upgrade`
+- 检查 `pubspec.yaml` 中的依赖版本
+
+3. 如果遇到编译错误：
+- 检查 Dart SDK 版本是否符合要求
+- 确保所有代码文件都正确放置
+
+4. 如果需要调试：
+- 使用 `print` 语句或 debugger
+- 查看 Flutter DevTools
+
+5. 如果需要热重载：
+- 保存文件或按 r 键
+- 如果热重载失败，尝试热重启（按 R 键）
+
+要测试应用：
+1. 先创建一个滑雪记录
+2. 测试各个功能按钮
+3. 检查动画效果
+4. 验证数据存储
+
+要运行 Flutter 项目，你需要：
+安装 Flutter SDK
+安装对应平台的开发工具：
+iOS: Xcode
+Android: Android Studio
+运行 flutter run
+Flutter 会自动根据你的目标平台（iOS/Android）生成对应的原生代码。这就是为什么说 Flutter 是跨平台的，但又不能直接用于小程序开发。
